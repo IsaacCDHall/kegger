@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { KegsComponent } from './kegs/kegs.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    KegsComponent
   ],
   imports: [
     BrowserModule,
