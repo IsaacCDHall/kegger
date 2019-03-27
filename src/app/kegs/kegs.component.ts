@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FootComponent } from '../foot/foot.component';
 
 @Component({
-  selector: 'app-kegs',
+  selector: 'kegs',
   templateUrl: './kegs.component.html',
   styleUrls: ['./kegs.component.scss']
 })

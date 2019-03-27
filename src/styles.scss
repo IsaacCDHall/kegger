@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "";
+body {
+  background-image: url("assets/Sand-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-color: blue;
+  max-height: 100vh;
+}
+
+@font-face {
+  font-family: krabbyPatty;
+  src: url('/assets/Krabby-Patty.ttf');
+}
+
+div {
+  font-family: krabbyPatty;
+}
