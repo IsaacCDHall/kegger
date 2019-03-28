@@ -4,3 +4,29 @@ div {
   justify-content: center;
   padding-top: 40px;
 }
+
+#kegBrand {
+  font-family: "Tattoo Gothic";
+}
+
+.kegDisplay {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding-bottom: 40px;
+}
+li {
+  list-style: none;
+}
+
+.kegInfo {
+  padding: 0;
+  font-family: serif;
+  display: flex;
+  // align-items: center;
+  line-height: 0px;
+  flex-direction: column;
+  input {
+    margin-bottom: 5px;
+  }
+}

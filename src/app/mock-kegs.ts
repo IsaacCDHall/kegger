@@ -1,12 +1,9 @@
-// import { Recipe } from './recipe';
-//
-// export const RECIPES: Recipe[] = [
-//   { id: 11, name: 'Apple Pie', ingredients: ['Apple', 'Flour', 'Eggs', 'Milk', 'Sugar'] },
-//   { id: 12, name: 'Larry Bird\'s Magic Johnson', ingredients: ['Soft Butter', 'Flour', 'Sharp Cheddar', 'Cayenne', 'Salt', 'Rice Krispies Cereal'] },
-//   { id: 13, name: 'Shepherd\'s Pie', ingredients: ['Meat', 'Flour', '???'] },
-//   { id: 14, name: 'Pumpkin Pie', ingredients: ['Apples', 'NO pumpkin', 'Flour'] },
-//   { id: 15, name: 'Beef Stroganoff', ingredients: ['Beef', 'Wide Egg Noodles', 'Brandy', 'Sour Cream', 'Animal Stock'] },
-//   { id: 16, name: 'Chicken Marsala', ingredients: ['Chicken', 'Tomato Sauce', 'Wine', 'Mushrooms', 'Bacon'] },
-//   { id: 17, name: 'Steak Diane', ingredients: ['Steak', 'Brandy', 'Onions', 'Worcestorshire', 'Mustard', 'Lemon Juice', 'Shallots'] },
-//   { id: 18, name: 'Spaghetti Carbonara', ingredients: ['Spaghetti','Eggs','Bacon','Cheese'] }
-// ];
+import { Keg } from './keg';
+
+export const KEGS: Keg[] = [
+  { id: 11, name: 'Blushing Monk', brand: 'Founders', price: 8, abv: 9.2, ibu: 20, volume: 124},
+  { id: 12, name: 'War Horn', brand: 'Saison', price: 6, abv: 6.3, ibu: 20, volume: 124},
+  { id: 13, name: 'Paradise Pucker', brand: 'Rogue Ales', price: 5, abv: 6, ibu: 5, volume: 124},
+  { id: 14, name: 'Cali Creamin', brand: 'Mother Earth', price: 4, abv: 5, ibu: 18, volume: 124},
+  { id: 15, name: 'Pils', brand: 'Chapman Crafted', price: 4.5, abv: 5.2, ibu: 10, volume: 124}
+];

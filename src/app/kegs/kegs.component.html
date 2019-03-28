@@ -1,14 +1,30 @@
-<!-- <div *ngIf='startUp' class="">
-  <img src="../../assets/pineapple.png" alt="">
-</div> -->
-<div class="">
-  <img src="../../assets/pineapple.png" alt="">
+<button (click)="employeeMode=!employeeMode">Employee View</button>
+<div class="kegDisplay" *ngIf="selectedKeg">
+  <h1>{{selectedKeg.name}} Details</h1>
+  <div class="kegInfo" *ngIf="!editMode">
+    <p >{{selectedKeg.brand}} Brewery</p>
+    <p>${{selectedKeg.price}} / pint</p>
+    <p>{{selectedKeg.abv}}% abv</p>
+    <p>{{selectedKeg.ibu}} IBUs</p>
+    <p>{{selectedKeg.volume}} pints remaining</p>
+  </div>
+  <div class="kegInfo" *ngIf="editMode">
+    <input [(ngModel)]="selectedKeg.name" placeholder="Name">
+    <input [(ngModel)]="selectedKeg.brand" placeholder="Brand">
+    <input [(ngModel)]="selectedKeg.price" type="number" placeholder="Price">
+    <input [(ngModel)]="selectedKeg.abv" type="number" placeholder="abv">
+    <input [(ngModel)]="selectedKeg.ibu" type="number" placeholder="ibu">
+    <input [(ngModel)]="selectedKeg.volume" type="number" placeholder="Volume">
+  </div>
+  <button (click)="editMode=!editMode">Edit</button>
 </div>
-
-<div *ngIf='login'>
-
-</div>
-
-<div *ngIf='register'>
-
-</div>
+<button *ngIf="employeeMode" (click)="addKeg(); onSelect(kegs[kegs.length-1])">Add Keg</button>
+<ul class="kegs">
+  <li *ngFor="let keg of kegs"
+    [class.selected]="keg === selectedKeg"
+    (click)="onSelect(keg)">
+    <button *ngIf="employeeMode" (click)="sellPint(keg)">Sold</button>
+    <span class="badge">{{keg.name}} ^    {{keg.volume}} pints remaining</span>
+    <hr>
+  </li>
+</ul>
