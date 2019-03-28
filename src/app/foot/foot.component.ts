@@ -7,12 +7,7 @@ import { KegsComponent } from '../kegs/kegs.component';
   styleUrls: ['./foot.component.scss']
 })
 export class FootComponent implements OnInit {
-  openLogin() {
 
-  }
-  openRegister() {
-
-  }
   constructor() { }
 
   ngOnInit() {

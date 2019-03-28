@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import { KegsComponent } from './kegs/kegs.component';
+import { HeadComponent } from './head/head.component';
+import { BodyComponent } from './body/body.component';
+import { FootComponent } from './foot/foot.component';
+
+import { Keg } from './keg';
+import { KEGS } from './mock-kegs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +13,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  kegs = KEGS;
+
 }

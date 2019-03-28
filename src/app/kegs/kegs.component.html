@@ -1,6 +1,6 @@
 <button (click)="employeeMode=!employeeMode">Employee View</button>
 <div class="kegDisplay" *ngIf="selectedKeg">
-  <h1>{{selectedKeg.name}} Details</h1>
+  <h1>{{selectedKeg.name}}</h1>
   <div class="kegInfo" *ngIf="!editMode">
     <p >{{selectedKeg.brand}} Brewery</p>
     <p>${{selectedKeg.price}} / pint</p>
@@ -18,12 +18,13 @@
   </div>
   <button (click)="editMode=!editMode">Edit</button>
 </div>
-<button *ngIf="employeeMode" (click)="addKeg(); onSelect(kegs[kegs.length-1])">Add Keg</button>
-<ul class="kegs">
-  <li *ngFor="let keg of kegs"
+<button *ngIf="employeeMode" (click)="addKeg(); onSelect(kegList[kegList.length-1])">Add Keg</button>
+<ul class="kegList">
+  <li *ngFor="let keg of kegList"
     [class.selected]="keg === selectedKeg"
     (click)="onSelect(keg)">
-    <button *ngIf="employeeMode" (click)="sellPint(keg)">Sold</button>
+    <button *ngIf="employeeMode && keg.volume > 0" (click)="sellPint(keg)">Sell</button>
+    <button *ngIf="employeeMode && keg.volume <= 0" (click)="refill(keg)">Refill</button>
     <span class="badge">{{keg.name}} ^    {{keg.volume}} pints remaining</span>
     <hr>
   </li>

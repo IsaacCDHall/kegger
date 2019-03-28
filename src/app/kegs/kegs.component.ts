@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Keg } from '../keg';
-import { KEGS } from '../mock-kegs';
 
 @Component({
   selector: 'kegs',
@@ -8,14 +7,16 @@ import { KEGS } from '../mock-kegs';
   styleUrls: ['./kegs.component.scss']
 })
 export class KegsComponent implements OnInit {
-  kegs = KEGS;
-
+  @Input() kegList: Keg[];
   selectedKeg: Keg;
 
   constructor() { }
 
   ngOnInit() {
-    this.selectedKeg = KEGS[0];
+    setTimeout(() => {
+      this.selectedKeg = this.kegList[0];
+
+    });
   }
 
   onSelect(keg: Keg): void {
@@ -23,12 +24,16 @@ export class KegsComponent implements OnInit {
   }
 
   addKeg(keg: Keg): void {
-    const newKeg: Keg = {id: KEGS.length + 11, name: "new", brand: "new", price: 0, abv: 0, ibu: 0, volume: 124};
-    KEGS.push(newKeg);
+    const newKeg: Keg = {id: this.kegList.length + 11, name: "new", brand: "new", price: 0, abv: 0, ibu: 0, volume: 124};
+    this.kegList.push(newKeg);
   }
 
   sellPint(keg: Keg): void {
-    KEGS[keg.id-11].volume--;
+    this.kegList[keg.id-11].volume--;
+  }
+
+  refill(keg: Keg): void {
+    this.kegList[keg.id-11].volume = 124;
   }
 
 }
